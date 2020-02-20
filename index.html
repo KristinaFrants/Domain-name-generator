@@ -1,0 +1,30 @@
+<h1>Survival Generator</h1>
+<input id="newmonster">
+<button onmouseover="addMonster()">hover over me to add monster</button>
+<button class="btn" onclick="generate()">Get Ready <i class="fas fa-biohazard"></i></button>
+<ul id="ideas">
+</ul>
+
+<script>
+    let speed = ["Fast", "Slow", "Angry"]
+let monsters = ['Zombie', "Sharknado", "Werewolf"]
+let plans = ["Survival Plan", "Damage Plan"]
+let ideas = ""
+function addMonster() {
+  boxvalue = document.getElementById('newmonster').value;
+  monsters.push(boxvalue);
+}
+function generate() {
+  
+  for (let i = 0; i < speed.length; i++) {
+  for (let j = 0; j < monsters.length; j++) { 
+    for (let k = 0; k < plans.length; k++) {
+     ideas += `<li>${speed[i]} ${monsters[j]} ${plans[k]}</li>`
+    }  
+  }
+}
+    document.querySelector("#ideas").innerHTML = ideas
+  
+}
+
+</script>
